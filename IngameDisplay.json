@@ -1,0 +1,310 @@
+[
+    {
+        "id": "36ba4e122ebf1392",
+        "type": "tab",
+        "label": "InGameDisplayTest",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "012bb36100f60a7a",
+        "type": "change",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "timerText",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 90,
+        "wires": [
+            [
+                "98f10c41cc2b7aff"
+            ]
+        ]
+    },
+    {
+        "id": "cdda24f43123a60c",
+        "type": "countdown",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "60",
+        "resetWhileRunning": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": false,
+        "minuteCounter": true,
+        "x": 350,
+        "y": 90,
+        "wires": [
+            [],
+            [
+                "012bb36100f60a7a"
+            ]
+        ]
+    },
+    {
+        "id": "152b97fe527d6ee8",
+        "type": "ui_button",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "group": "9f69b1e6.70efd8",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "STOP",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Red",
+        "className": "",
+        "icon": "",
+        "payload": "STOP",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 110,
+        "wires": [
+            [
+                "cdda24f43123a60c"
+            ]
+        ]
+    },
+    {
+        "id": "cd43e25cf94abdce",
+        "type": "ui_button",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "group": "9f69b1e6.70efd8",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "START",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "Green",
+        "className": "",
+        "icon": "",
+        "payload": "START",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "cdda24f43123a60c"
+            ]
+        ]
+    },
+    {
+        "id": "3cc7248e7b067611",
+        "type": "ui_text_input",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "group": "9f69b1e6.70efd8",
+        "order": 1,
+        "width": 12,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "8a89c999602d0530"
+            ]
+        ]
+    },
+    {
+        "id": "4ecf88eb9a690cbf",
+        "type": "uibuilder",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "topic": "",
+        "url": "InGameTest",
+        "fwdInMessages": false,
+        "allowScripts": false,
+        "allowStyles": false,
+        "copyIndex": true,
+        "templateFolder": "blank",
+        "extTemplate": "",
+        "showfolder": false,
+        "reload": false,
+        "sourceFolder": "src",
+        "deployedVersion": "6.5.0",
+        "showMsgUib": false,
+        "title": "",
+        "descr": "",
+        "x": 1060,
+        "y": 140,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "98f10c41cc2b7aff",
+        "type": "join",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "",
+        "propertyType": "full",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 840,
+        "y": 190,
+        "wires": [
+            [
+                "4ecf88eb9a690cbf"
+            ]
+        ]
+    },
+    {
+        "id": "8a89c999602d0530",
+        "type": "change",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "clueText",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 200,
+        "wires": [
+            [
+                "98f10c41cc2b7aff"
+            ]
+        ]
+    },
+    {
+        "id": "7b5232c2612808f8",
+        "type": "ui_button",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "group": "9f69b1e6.70efd8",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Image",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "/home/pi/.node-red/uibuilder/InGameTest/src/pic1.jpg",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "58973adcc38b2682"
+            ]
+        ]
+    },
+    {
+        "id": "58973adcc38b2682",
+        "type": "change",
+        "z": "36ba4e122ebf1392",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 280,
+        "wires": [
+            [
+                "98f10c41cc2b7aff"
+            ]
+        ]
+    },
+    {
+        "id": "93b87f9c728c602e",
+        "type": "comment",
+        "z": "36ba4e122ebf1392",
+        "name": "node-red-contrib-countdown-3000",
+        "info": "",
+        "x": 370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "9f69b1e6.70efd8",
+        "type": "ui_group",
+        "name": "Spiel Steuerung",
+        "tab": "31696413.9a5234",
+        "order": 1,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "31696413.9a5234",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
